@@ -1,1 +1,1 @@
-This is an introduction to different types of loops used in Python and different ways they can be applied in different scenarios
+This project introduces if/else statements (conditions), different types of loops and functions used in Python, and how they can be applied in various scenarios.
