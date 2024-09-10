@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def uppercase(s):
+def uppercase(str):
     result = ""
     for char in s:
         if 'a' <= char <= 'z':
