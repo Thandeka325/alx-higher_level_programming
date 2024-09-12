@@ -2,7 +2,7 @@
 if __name__ == "__main__":
     import sys
     argv = sys.argv
-    argc = len(argv) - 1 # Exclude the program name
+    argc = len(sys.argv) - 1 # Exclude the program name
 
     if argc == 0:
         print("0 arguments.")
@@ -11,5 +11,5 @@ if __name__ == "__main__":
     else:
         print("{} arguments:".format(argc))
 
-    for i in range(1, argc + 1):
-        print("{}: {}".format(i, argv[i]))
+    for i in range(argc):
+        print("{}: {}".format(i + 1, argv[i + 1]))
