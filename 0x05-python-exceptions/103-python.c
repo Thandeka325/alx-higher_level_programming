@@ -15,7 +15,7 @@ void print_python_float(PyObject *p)
 
 	if (!PyFloat_CheckExact(p))
 	{
-		printf(" [ERROR} Invalid Float Object\n");
+		printf(" [ERROR] Invalid Float Object\n");
 		return;
 	}
 	value = ((PyFloatObject *)p)->ob_fval;
