@@ -70,43 +70,44 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
-    class SinglyLinkedList:
-        """Defines a singly linked list."""
 
-        def __init__(self):
-            """Initializes an empty singly linked list."""
-            self.__head = None
+class SinglyLinkedList:
+    """Defines a singly linked list."""
 
-        def __str__(self):
-            """Defines the string representation of the linked list.
+    def __init__(self):
+        """Initializes an empty singly linked list."""
+        self.__head = None
 
-            Returns:
-                str: A string containing all the node data, one per line.
-            """
+    def __str__(self):
+        """Defines the string representation of the linked list.
+
+        Returns:
+            str: A string containing all the node data, one per line.
+        """
+        current = self.__head
+        nodes = []
+        while current is not None:
+            nodes.append(str(current.data))
+            current = current.next_node
+        return "\n".join(nodes)
+
+    def sorted_insert(self, value):
+        """Inserts a new Node into the correct sorted position\
+                in the list (increasing order).
+
+        Args:
+            value (int): The value to insert into the list.
+        """
+        new_node = Node(value)
+        if self.__head is None or self.__head.data >= value:
+            # Insert at the beginning
+            new_node.next_node = self.__head
+            self.__head = new_node
+        else:
+            # Insert in the middle or end
             current = self.__head
-            node = []
-            while current is not None:
-                node.append(str(current.data))
+            while current.next_node is not None and\
+                    current.next_node.data < value:
                 current = current.next_node
-            return "\n".join(nodes)
-
-        def sorted_insert(self, value):
-            """Inserts a new Node into the correct sorted position\
-                    in the list (increasing order).
-
-            Args:
-                value (int): The value to insert into the list.
-            """
-            new_node = Node(value)
-            if self.__head is None or self.__head.data >= value:
-                # Insert at the beginning
-                new_node.next_node = self.__head
-                self.__head = new_node
-            else:
-                # Insert in the middle or end
-                current = self.__head
-                while current.next_node is not None and\
-                        current.next_node.data < value:
-                    current = current.next_node
-                new_node.next_node = current.next_node
-                current.next_node = new_node
+            new_node.next_node = current.next_node
+            current.next_node = new_node
