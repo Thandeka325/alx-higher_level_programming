@@ -1,0 +1,1 @@
+Project 0x08. Python - More Classes and Objects is an introduction to Object oriented programming, class and instance attributes, classmethods and staticmethods, properties Vs. getters and setters, and str VS repr.
