@@ -13,7 +13,7 @@ void print_python_string(PyObject *p)
 	/* Check if the object is a valid Unicode object */
 	if (!PyUnicode_Check(p))
 	{
-		printf("[.] string object info\n [ERROR] Invalid string object\n");
+		printf("[.] string object info\n [ERROR] Invalid String object\n");
 		return;
 	}
 
