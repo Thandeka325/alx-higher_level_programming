@@ -420,3 +420,6 @@ Write the Python function def magic_calculation(a, b): that does exactly the sam
              11 RETURN_VALUE
 
 Tip: https://docs.python.org/3.4/library/dis.html
+
+
+All files are executable
