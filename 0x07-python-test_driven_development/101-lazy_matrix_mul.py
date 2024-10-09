@@ -1,4 +1,4 @@
-#!/usr/bib/python3
+#!/usr/bin/python3
 """
 This module multiplies two matrices using NumPy.
 """
