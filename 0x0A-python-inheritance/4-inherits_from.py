@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module contains a function that checks if an object is an instance
-of a class that inherited (directly or indirectly) from the specified 
+of a class that inherited (directly or indirectly) from the specified
 class, excluding the case where object is an instance of specified clss.
 """
 
