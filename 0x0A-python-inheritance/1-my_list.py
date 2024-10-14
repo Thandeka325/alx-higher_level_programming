@@ -10,6 +10,10 @@ class MyList(list):
     list sorted in asscending order.
     """
 
+    def __init__(self):
+        """Initializes the object"""
+        super().__init__()
+
     def print_sorted(self):
         """
 
