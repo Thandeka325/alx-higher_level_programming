@@ -81,8 +81,8 @@ were given"
         self.assertEqual(getattr(Base, "_Base__nb_objects"), b.id)
 
     def test_G_custom_id_int(self):
-        ""Tests for custom int id.
-        ""
+        """Tests for custom int id.
+        """
         i = 98
         b = Base(i)
         self.assertEqual(b.id, i)
