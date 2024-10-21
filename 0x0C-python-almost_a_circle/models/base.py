@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 """Base class module."""
 from json import dumps, loads
 import csv
