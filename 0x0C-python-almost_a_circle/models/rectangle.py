@@ -1,32 +1,22 @@
 #!/usr/bin/python3
-"""Rectangle class module, inherits from Base.
-"""
+"""Module for Rectangle class."""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """A Rectangle class thet inherits from Base.
-    """
+    """A Rectangle class."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initializes a new Rectangle object.
-
-        Args:
-            width (int): Width of the rectangle.
-            height (int): Height of the rectangle.
-            x (int): x position.
-            y (int): y position.
-            id (int): id of the rectangle.
-        """
+        """Constructor."""
         super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
 
-    # Getters and Setters
     @property
     def width(self):
+        """Width of this rectangle."""
         return self.__width
 
     @width.setter
@@ -36,6 +26,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Height of this rectangle."""
         return self.__height
 
     @height.setter
@@ -45,6 +36,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """x of this rectangle."""
         return self.__x
 
     @x.setter
@@ -54,6 +46,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """y of this rectangle."""
         return self.__y
 
     @y.setter
@@ -61,10 +54,8 @@ class Rectangle(Base):
         self.validate_integer("y", value)
         self.__y = value
 
-    # Validation method
     def validate_integer(self, name, value, eq=True):
-        """Validayes that the value is an integer.
-        """
+        """Method for validating the value."""
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if eq and value < 0:
@@ -72,32 +63,24 @@ class Rectangle(Base):
         elif not eq and value <= 0:
             raise ValueError("{} must be > 0".format(name))
 
-    # Public method for the area
     def area(self):
-        """Returns the area of the Rectangle instance.
-        """
+        """Computes area of this rectangle."""
         return self.width * self.height
 
-    # Public method to display the Rectangle
     def display(self):
-        """Prints a string(#) representation of the rectangle instance.
-        """
+        """Prints string representation of this rectangle."""
         s = '\n' * self.y + \
             (' ' * self.x + '#' * self.width + '\n') * self.height
         print(s, end='')
 
-    # Overriding __str__method
     def __str__(self):
-        """Returns [Rectangle] (<id>) <x>/<y> - <width>/<height>.
-        """
+        """Returns string info about this rectangle."""
         return '[{}] ({}) {}/{} - {}/{}'.\
             format(type(self).__name__, self.id, self.x, self.y, self.width,
                    self.height)
 
-    # Update method with *args and **kwargs
     def __update(self, id=None, width=None, height=None, x=None, y=None):
-        """Internal method that updates instance attr using */**args.
-        """
+        """Internal method that updates instance attr using */**args."""
         if id is not None:
             self.id = id
         if width is not None:
@@ -110,8 +93,7 @@ class Rectangle(Base):
             self.y = y
 
     def update(self, *args, **kwargs):
-        """Updates the attributes of the Rectangle.
-        """
+        """Updates instance attr using no-keyword & keyword args."""
         # print(args, kwargs)
         if args:
             self.__update(*args)
@@ -119,7 +101,6 @@ class Rectangle(Base):
             self.__update(**kwargs)
 
     def to_dictionary(self):
-        """Returns dictionary representation of this class.
-        """
+        """Returns dictionary representation of this class."""
         return {"id": self.id, "width": self.__width, "height": self.__height,
                 "x": self.__x, "y": self.__y}
