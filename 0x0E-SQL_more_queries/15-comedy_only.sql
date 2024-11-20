@@ -1,7 +1,4 @@
--- Script lists all Comedy shows in the database hbtn_0d_tvshows..
--- Results are sorted in ascending order by show title.
-
-USE hbtn_0d_tvshows;
+-- Script lists all Comedy shows in the database hbtn_0d_tvshows
 
 SELECT title
 FROM tv_shows
