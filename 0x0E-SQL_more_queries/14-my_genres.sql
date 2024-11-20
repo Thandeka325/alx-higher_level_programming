@@ -1,7 +1,4 @@
--- Script uses the hbtn_0d_tvshows database to lists all genres of the show Dexter.
--- Results are sorted in ascending order by genre name.
-
-USE hbtn_0d_tvshows;
+-- Script uses the hbtn_0d_tvshows database to lists all genres of the show Dexter
 
 SELECT name
 FROM tv_genres
