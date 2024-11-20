@@ -1,7 +1,4 @@
--- Script lists all shows contained in hbtn_0d_tvshows without a genre linked.
--- Results are sorted in ascending order by tv_shows.title and tv_show_genres.genre_id
-
-USE hbtn_0d_tvshows;
+--  Script lists all shows contained in hbtn_0d_tvshows without a genre linked
 
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
