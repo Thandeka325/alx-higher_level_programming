@@ -17,9 +17,9 @@ if __name__ == "__main__":
 
     if response.status_code == 200:
         commits = response.json()
-        for commit in commits:
-            sha = commit.get('sha')
-            author = commit.get('commit').get('author').get('name')
+        for i in range(min(10, len(commits))):
+            sha = commits[i].get('sha')
+            author = commits[i].get('commit').get('author').get('name')
             print(f"{sha}: {author}")
     else:
         print("Error: Unable to fetch commits")
