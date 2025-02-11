@@ -2,17 +2,20 @@
 // Script that prints the number of movies where Wedge Antilles (ID 18) is present
 
 const request = require('request');
+let num = 0;
 
-const apiUrl = process.argv[2];
-
-request(apiUrl, (err, res, body) => {
+request.get(process.argv[2], (err, res, body) => {
   if (err) {
     console.log(err);
   } else {
-    const data = JSON.parse(body);
-    const movies = data.results.filter((film) =>
-      film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
-    );
-    console.log(movies.length);
+    const content = JSON.parse(body);
+    content.results.forEach((film) => {
+      film.characters.forEach((character) => {
+	if (character.includes(18)) {
+	 num += 1;
+	}
+	});
+       });
+    console.log(num);
   }
 });
