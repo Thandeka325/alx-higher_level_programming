@@ -1,6 +1,6 @@
 ## __Project: 0x15-javascript-web_jquery__
 
-This is an introduction to frontend programming using JavaScript but focussing on Web jQuery, showing different ways it can be implemented and use in creating web pages.
+This is an introduction to frontend programming using JavaScript but focussing on Web jQuery, showing different ways it can be implemented and used in creating web pages.
 
 __Resources__
 
